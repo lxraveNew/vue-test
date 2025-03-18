@@ -23,20 +23,17 @@
         <v-card-text>
           <v-form ref="createForm" v-model="valid" lazy-validation>
             <v-text-field 
-              :value="form.username" 
-              @input="(e: Event) => form.username = (e.target as HTMLInputElement).value"
+              v-model="form.username"
               label="Имя пользователя" 
               required
             ></v-text-field>
             <v-text-field 
-              :value="form.email" 
-              @input="(e: Event) => form.email = (e.target as HTMLInputElement).value"
+              v-model="form.email"
               label="Email" 
               required
             ></v-text-field>
             <v-text-field 
-              :value="form.password" 
-              @input="(e: Event) => form.password = (e.target as HTMLInputElement).value"
+              v-model="form.password"
               label="Пароль" 
               type="password" 
               required
@@ -63,6 +60,10 @@ interface User {
   password?: string
 }
 
+interface EditForm extends User {
+  id: string | null
+}
+
 const users = ref<User[]>([])
 const headers = [
   { text: 'ID', value: '_id' },
@@ -80,7 +81,7 @@ const form = ref<Omit<User, '_id'>>({
   password: ''
 })
 
-const editForm = ref<User & {id: string | null}>({
+const editForm = ref<EditForm>({
   id: null,
   _id: '',
   username: '',
