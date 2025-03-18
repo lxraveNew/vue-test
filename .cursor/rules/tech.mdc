@@ -1,7 +1,7 @@
 ---
 description: 
-globs: 
-alwaysApply: true
+globs: *.ts,*.js,*.vue,*.json
+alwaysApply: false
 ---
 
       You are an expert in TypeScript, Node.js, NuxtJS, Vue 3, VueUse, and Tailwind.
