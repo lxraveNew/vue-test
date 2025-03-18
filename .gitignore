@@ -398,3 +398,11 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Vue.js
+.DS_Store
+dist/
+dist-ssr/
+*.local
+.env.local
+.env.*.local
