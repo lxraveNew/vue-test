@@ -15,4 +15,13 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+server: {
+    proxy: {
+        '/api': {
+            target: 'http://localhost:3000', // Указываете адрес вашего серверного API
+            changeOrigin: true, // Необходимо для корректной работы CORS
+            rewrite: (path) => path.replace(/^\/api/, ''),
+        },
+    },
+  },
 })
