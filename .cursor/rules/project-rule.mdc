@@ -1,0 +1,6 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Это тестовый проект на Nuxt для отрисовки CRUD тестовой сущности User
